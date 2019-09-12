@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link href="/assets/style.css" type="text/css" rel="stylesheet"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+
+        </script>
+    </head>
+    <body>
+        <h1>
+        <b>Hello I am using Express</b>
+        </h1>
+        <form method = 'POST' action='/person'>
+            First Name: <input type='text' id='firstName' name='firstName' /><br>
+            Last Name: <input type='text' id='lastName' name='lastName' /><br>
+            <input type='submit' vaue='Submit' />
+        </form>
+        <script>
+            $.ajax({
+                type: "POST",
+                url: "/personjson",
+                data: JSON.stringify({ firstName: 'John', lastName: 'Doe'}),
+                dataType: "json",
+                contentType: "/application/json"
+            })
+        </script>
+    </body>
+</html>
